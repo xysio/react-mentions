@@ -873,6 +873,18 @@ class MentionsInput extends React.Component {
         syncResult
       )
     }
+    const arrayData = mentionChild.props.data
+    if (arrayData instanceof Array) {
+      this.updateSuggestions(
+        this._queryId,
+        childIndex,
+        query,
+        querySequenceStart,
+        querySequenceEnd,
+        plainTextValue,
+        arrayData
+      )
+    }
   }
 
   updateSuggestions = (
